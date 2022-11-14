@@ -64,14 +64,16 @@ namespace Full_GRASP_And_SOLID
             return result;
         }
 
-        // GetCookTime
+        // Agregado por Expert
         public int GetCookTime()
         {
-            int cook_time = 0;
+            int cook_time = 0;  
+
             foreach(BaseStep step in this.steps)
             {   
                 cook_time += step.Time;
             }
+            
             return cook_time;
         }
     }
