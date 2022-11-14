@@ -16,6 +16,8 @@ namespace Full_GRASP_And_SOLID
         private IList<BaseStep> steps = new List<BaseStep>();
 
         public Product FinalProduct { get; set; }
+        
+        public bool Cooked = false;
 
         // Agregado por Creator
         public void AddStep(Product input, double quantity, Equipment equipment, int time)
@@ -75,6 +77,16 @@ namespace Full_GRASP_And_SOLID
             }
             
             return cook_time;
+        }
+
+
+        // Implementado por ISP. 
+         public void Cook()
+        {
+            CountdownTimer CT = new CountdownTimer();
+            TimeCounterClient TCC = new TimeCounterClient(this);
+
+            CT.Register(GetCookTime(),TCC);
         }
     }
 }
