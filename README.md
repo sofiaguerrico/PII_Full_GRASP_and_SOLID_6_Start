@@ -25,3 +25,7 @@ La clase ```Thread``` está definida en el espacio de nombres ```System.Threadin
 
 
 ️➡️ **Que patrón(es) o principio(s) has usado para esto?**
+
+En el caso del método ```GetCookTime()``` fue aplicado el patrón Expert ya que este dice que se asigna las responsabildades a la clase que es experta en esa informacion, por ende en Recipe se encunetra la lista que contiene los steps correspondientes.
+
+Por otro lado, para la parte dos y tres se puede ver reflejado el principio ISP, el cual dice que los clientes no deben ser forzados a conocer tipos que no usan. Para resolver este problema no se podía cambiar el tipo de la clase Recipe, por lo que se creó una nueva clase llamada TimerCounterClient que implementa la interfaz TimerClient para que se pueda utilizar el método ```TimeOut()``` en Recipe. Allí se relacionan la clase con la interfaz, entonces, faltaría que Recipe y esta nueva clase se conozcan, por lo que también se implementará una instancia de tipo Recipe en el constructor de la clase. 
