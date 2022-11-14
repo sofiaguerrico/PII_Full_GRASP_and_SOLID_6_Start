@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Full_GRASP_And_SOLID
 {
@@ -61,6 +62,17 @@ namespace Full_GRASP_And_SOLID
             }
 
             return result;
+        }
+
+        // GetCookTime
+        public int GetCookTime()
+        {
+            int cook_time = 0;
+            foreach(BaseStep step in this.steps)
+            {   
+                cook_time += step.Time;
+            }
+            return cook_time;
         }
     }
 }
