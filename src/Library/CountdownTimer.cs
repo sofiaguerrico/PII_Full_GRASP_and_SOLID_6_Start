@@ -25,5 +25,7 @@ namespace Full_GRASP_And_SOLID
             this.client.TimeOut();
             this.timer.Change(Timeout.Infinite, Timeout.Infinite);
         }
+
+    
     }
 }
